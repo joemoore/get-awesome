@@ -16,7 +16,7 @@ if ARGV.size > 0
 
   puts "Setting git config to use #{authors}"
   system "git config --global user.name '#{authors}'"
-  system "git config --global user.email \'accounts+#{authors.gsub(' ', '.')}@pivotallabs.com\'"
+  system "git config --global user.email \'accounts+#{authors.downcase.gsub(' ', '.')}@pivotallabs.com\'"
 else
   current_pair = `git config --global user.name`.chomp
   puts "Pair is set to: #{current_pair}"
